@@ -5,6 +5,8 @@ statistics-channels {
 <% end -%>
 options {
 	directory "<%= @data_dir %>";
+	# https://bugzilla.redhat.com/show_bug.cgi?id=709205#c29
+	managed-keys-directory "/var/named/dynamic";
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
