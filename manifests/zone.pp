@@ -71,7 +71,6 @@ define dns::zone (
       command     => "sed '8s/_SERIAL_/${zone_serial}/' ${zone_file_stage} > ${zone_file}",
       path        => ['/bin', '/sbin', '/usr/bin', '/usr/sbin'],
       refreshonly => true,
-      provider    => posix,
       user        => $dns::server::params::owner,
       group       => $dns::server::params::group,
       require     => Class['dns::server::install'],
